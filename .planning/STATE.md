@@ -9,14 +9,14 @@ progress:
   completed_phases: 2
   total_plans: 2
   completed_plans: 2
-  percent: 100
+  percent: 25
 ---
 
 # State
 
 ## Current Focus
 
-Phase 01: Research And Public Contract.
+Phase 02: Core Types And Validation.
 
 ## Completed
 
@@ -26,20 +26,23 @@ Phase 01: Research And Public Contract.
 - Phase 00 repository foundation completed with Node 24, pnpm 10.33.2, TypeScript,
   Biome, Vitest, tsdown metadata, Changesets versioning metadata, CI, contribution
   docs, and repo-local AGENTS.md guidance.
+- Phase 01 research and public contract completed with source-first BOX NOW
+  research, ecosystem studies, ADRs, package README stubs, and an initial public
+  API sketch.
 
 ## In Progress
 
-- Phase 01 research and public contract planning.
+- Phase 02 core types and validation planning.
 
 ## Next Task
 
-`$gsd-discuss-phase 01` or `$gsd-plan-phase 01`.
+`$gsd-discuss-phase 02` or `$gsd-plan-phase 02`.
 
 Recommended next focus:
 
-1. Confirm Phase 01 research/source boundaries.
-2. Convert existing BOX NOW research into implementation-ready public API contracts.
-3. Review package and exported symbol names against `.planning/UBIQUITOUS_LANGUAGE.md`.
+1. Confirm Phase 02 type and validation boundaries.
+2. Plan shared domain types around `.planning/public-api-sketch.md`.
+3. Keep protocol naming aligned with `.planning/UBIQUITOUS_LANGUAGE.md`.
 
 ## Blockers
 
@@ -55,6 +58,7 @@ Recommended next focus:
 - `pnpm check` succeeded.
 - `pnpm test` succeeded with no test files yet.
 - `pnpm build` succeeded.
+- Phase 01 `pnpm check`, `pnpm test`, and `pnpm build` succeeded.
 
 ## Operating Notes
 

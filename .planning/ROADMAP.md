@@ -21,15 +21,15 @@ Goal: make the repository safe to build in without implementing BOX NOW behavior
 Goal: lock terminology, source material, and public API boundaries before code.
 
 - [x] 01-01 Capture official BOX NOW API research.
-- [ ] 01-02 Capture BOX NOW widget research.
-- [ ] 01-03 Capture WordPress plugin and Symfony bundle behavior and failure-mode research.
-- [ ] 01-04 Decide package topology ADR.
-- [ ] 01-05 Decide secret-boundary ADR.
-- [ ] 01-06 Decide widget-contract ADR.
-- [ ] 01-07 Decide Astro integration scope ADR.
-- [ ] 01-08 Draft initial public API sketch.
-- [ ] 01-09 Review public names against the glossary.
-- [ ] 01-10 Add package README stubs with non-goals.
+- [x] 01-02 Capture BOX NOW widget research.
+- [x] 01-03 Capture WordPress plugin and Symfony bundle behavior and failure-mode research.
+- [x] 01-04 Decide package topology ADR.
+- [x] 01-05 Decide secret-boundary ADR.
+- [x] 01-06 Decide widget-contract ADR.
+- [x] 01-07 Decide Astro integration scope ADR.
+- [x] 01-08 Draft initial public API sketch.
+- [x] 01-09 Review public names against the glossary.
+- [x] 01-10 Add package README stubs with non-goals.
 
 ## Phase 02: Core Types And Validation
 
