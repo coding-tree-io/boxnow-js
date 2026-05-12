@@ -106,6 +106,7 @@ None - plan executed within the Phase 00 context decisions.
 
 - `pnpm add` required the workspace-root `-w` flag. Retried with `pnpm add -Dw`.
 - `pnpm check` initially failed because `.planning/config.json` needed Biome formatting. Ran `pnpm format`, then `pnpm check` passed.
+- GitHub Actions warned about the `pnpm/action-setup` Node 20 runtime. Replaced the action with a Corepack setup. The first Corepack pass incorrectly left `setup-node` pnpm caching enabled before pnpm existed; removed that cache option for the lean Phase 00 workflow.
 
 ## User Setup Required
 
