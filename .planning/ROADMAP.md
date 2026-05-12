@@ -37,10 +37,10 @@ Goal: create shared types and pure validation without HTTP.
 
 - [x] 02-00 Complete the external library audit gate before locking Phase 02 public names or validation contracts: full-enough source audit of the local WordPress Plugin and `answear/boxnow-bundle`, with official BOX NOW OpenAPI/widget docs kept as higher precedence.
 - [x] 02-01 Add internal package `@coding-tree-io/boxnow-core`.
-- [ ] 02-02 Add `Environment`, `CountryCode`, and endpoint config types.
-- [ ] 02-03 Add `CompartmentSize` enum and dimension constants.
-- [ ] 02-04 Add `Locker`, `Origin`, and `Destination` types.
-- [ ] 02-05 Add `LockerSnapshot` normalization contract.
+- [x] 02-02 Add `Environment`, `CountryCode`, and endpoint config types.
+- [x] 02-03 Add `CompartmentSize` enum and dimension constants.
+- [x] 02-04 Add `Locker`, `Origin`, and `Destination` types.
+- [x] 02-05 Add `LockerSnapshot` normalization contract.
 - [ ] 02-06 Add `DeliveryRequest` input types.
 - [ ] 02-07 Add `Parcel`, `ParcelLabelFormat`, and label option types.
 - [ ] 02-08 Add protocol response types for auth, locations, delivery requests, and parcels.
