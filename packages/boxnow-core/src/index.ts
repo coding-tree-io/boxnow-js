@@ -37,6 +37,36 @@ export {
   CompartmentSizeSchema,
 } from './primitives.js';
 export type {
+  AuthSessionResponse,
+  DeliveryRequest,
+  DeliveryRequestItem,
+  DeliveryRequestLocation,
+  DeliveryRequestResponse,
+  DestinationResponse,
+  OriginResponse,
+  ParcelLabelFormat,
+  ParcelLabelOptions,
+  ParcelResponse,
+  ProtocolLocation,
+} from './protocol.js';
+export {
+  AuthSessionResponseSchema,
+  DeliveryRequestItemSchema,
+  DeliveryRequestLocationSchema,
+  DeliveryRequestResponseSchema,
+  DeliveryRequestSchema,
+  DestinationResponseSchema,
+  OriginResponseSchema,
+  ParcelLabelFormatSchema,
+  ParcelLabelOptionsSchema,
+  ParcelResponseSchema,
+  ProtocolLocationSchema,
+  validateAuthSessionResponse,
+  validateDeliveryRequest,
+  validateParcelLabelOptions,
+  validateParcelResponse,
+} from './protocol.js';
+export type {
   BoxNowStandardSchema,
   BoxNowValidationIssue,
   BoxNowValidationResult,
