@@ -35,7 +35,7 @@ Goal: lock terminology, source material, and public API boundaries before code.
 
 Goal: create shared types and pure validation without HTTP.
 
-- [ ] 02-00 Complete the external library audit gate before locking Phase 02 public names or validation contracts: full-enough source audit of the local WordPress Plugin and `answear/boxnow-bundle`, with official BOX NOW OpenAPI/widget docs kept as higher precedence.
+- [x] 02-00 Complete the external library audit gate before locking Phase 02 public names or validation contracts: full-enough source audit of the local WordPress Plugin and `answear/boxnow-bundle`, with official BOX NOW OpenAPI/widget docs kept as higher precedence.
 - [ ] 02-01 Add package `@coding-tree-io/boxnow`.
 - [ ] 02-02 Add `Environment`, `CountryCode`, and endpoint config types.
 - [ ] 02-03 Add `CompartmentSize` enum and dimension constants.
