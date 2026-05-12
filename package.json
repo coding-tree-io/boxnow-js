@@ -15,7 +15,7 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "check": "biome ci . && pnpm typecheck",
     "test": "vitest run --passWithNoTests",
-    "build": "pnpm typecheck",
+    "build": "pnpm typecheck && tsdown",
     "changeset": "changeset",
     "version-packages": "changeset version"
   },
