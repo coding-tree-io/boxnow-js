@@ -41,10 +41,10 @@ Goal: create shared types and pure validation without HTTP.
 - [x] 02-03 Add `CompartmentSize` enum and dimension constants.
 - [x] 02-04 Add `Locker`, `Origin`, and `Destination` types.
 - [x] 02-05 Add `LockerSnapshot` normalization contract.
-- [ ] 02-06 Add `DeliveryRequest` input types.
-- [ ] 02-07 Add `Parcel`, `ParcelLabelFormat`, and label option types.
-- [ ] 02-08 Add protocol response types for auth, locations, delivery requests, and parcels.
-- [ ] 02-09 Add validation helpers for public request builders.
+- [x] 02-06 Add `DeliveryRequest` input types.
+- [x] 02-07 Add `Parcel`, `ParcelLabelFormat`, and label option types.
+- [x] 02-08 Add protocol response types for auth, locations, delivery requests, and parcels.
+- [x] 02-09 Add validation helpers for public request builders.
 - [ ] 02-10 Add tests for all pure validation helpers.
 
 ## Phase 03: Partner API Client
