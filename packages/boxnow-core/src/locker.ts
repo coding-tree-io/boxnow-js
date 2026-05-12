@@ -6,7 +6,7 @@ import {
   BoxNowIdSchema,
   BoxNowPostalCodeSchema,
 } from './primitives.js';
-import type { BoxNowValidationResult } from './validation.js';
+import type { BoxNowValidationIssue, BoxNowValidationResult } from './validation.js';
 
 export const LockerSchema = v.object({
   id: BoxNowIdSchema,
@@ -48,7 +48,9 @@ export const RawWidgetLockerSelectionSchema = v.object({
 export type RawWidgetLockerSelection = v.InferOutput<typeof RawWidgetLockerSelectionSchema>;
 
 export function normalizeLockerSelection(value: unknown): BoxNowValidationResult<LockerSnapshot> {
-  const result = RawWidgetLockerSelectionSchema['~standard'].validate(value);
+  const result = RawWidgetLockerSelectionSchema['~standard'].validate(value) as
+    | { readonly value: RawWidgetLockerSelection; readonly issues?: undefined }
+    | { readonly issues: ReadonlyArray<BoxNowValidationIssue> };
 
   if ('issues' in result && result.issues !== undefined) {
     return { issues: result.issues };
