@@ -141,3 +141,9 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Local IDE/project metadata
+.idea/
+
+# Local third-party research snapshots; document findings under .planning/research instead
+box-now-delivery-WP/
