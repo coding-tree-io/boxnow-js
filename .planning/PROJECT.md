@@ -46,7 +46,9 @@ The repository is a small monorepo:
 
 ## Current Status
 
-Planning/bootstrap. No runtime package implementation has been started.
+Phase 01 research and public contract work is complete. Phase 02 is ready to
+plan shared types and pure validation. No runtime package implementation has
+started.
 
 ## Open External Gates
 
