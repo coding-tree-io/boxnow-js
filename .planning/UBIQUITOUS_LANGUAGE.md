@@ -35,6 +35,16 @@
 | **Normalized Selection** | Validated locker selection emitted by the widget helper. | trusted selection |
 | **Transport Adapter** | Fetch-compatible seam used by the Partner API Client for runtimes and tests. | HTTP helper |
 
+## Public Contract And Protocol
+
+| Term | Definition | Aliases to avoid |
+| --- | --- | --- |
+| **Public Contract** (new) | Exported package names, factories, method namespaces, config keys, event names, and domain type names that consumers may depend on. | sketch, internal API |
+| **Domain Term** (new) | Glossary-approved name used in public APIs, docs, examples, and ADRs. | friendly alias, marketing name |
+| **Protocol Shape** (new) | BOX NOW request or response structure as documented by the official OpenAPI/manual sources. | public API shape |
+| **Protocol Field** (new) | BOX NOW field name preserved because wire-level fidelity or official documentation requires it. | domain name, raw field |
+| **Raw Escape Hatch** (new) | Explicit public surface that exposes protocol data when lossless mapping is necessary. | primary model, trusted data |
+
 ## Relationships
 
 - A **Host Application** may use the **Astro Integration**, **Widget Helper**, and **Partner API Client** independently.
@@ -43,6 +53,16 @@
 - A **Parcel Label** belongs to exactly one **Parcel** unless labels are fetched in a batch PDF.
 - A **Server Credential** must never be part of **Browser-Safe Config**.
 - A **Locker Snapshot** is host-facing data; it is not proof that the **Host Application** may skip server-side validation.
+- A **Public Contract** should use **Domain Terms** by default.
+- A **Protocol Field** may appear in a **Raw Escape Hatch** only when **Protocol Shape** fidelity is required.
+
+## Naming Source Precedence (new)
+
+1. Official BOX NOW documentation establishes canonical BOX NOW terms when the term is clear and safe for public use.
+2. Official OpenAPI/manual names define **Protocol Shapes** and **Protocol Fields**, but do not automatically become **Public Contract** names.
+3. Official widget documentation defines browser widget behavior terms for the **Widget Helper** and **Astro Integration**.
+4. Existing ecosystem terms, including the WordPress Plugin, are secondary evidence for merchant vocabulary, aliases to avoid, and future migration context.
+5. Toolkit authority boundaries can override familiar ecosystem terms when a term would imply checkout, payment, order persistence, stock, fulfillment, or credential ownership.
 
 ## Example Dialogue
 
@@ -50,6 +70,8 @@
 > **Domain expert:** "No. The Astro Integration can emit a Locker Selection, but the Host Application owns checkout and server-side delivery creation."
 > **Dev:** "So the Partner API Client needs Server Credentials, but the Widget Helper only receives Browser-Safe Config?"
 > **Domain expert:** "Exactly. The browser can know the partner id, but not OAuth client secrets."
+> **Dev:** "Should the Public Contract mirror every Protocol Field from the OpenAPI file?"
+> **Domain expert:** "No. Use Domain Terms first, and add a Raw Escape Hatch only when the Protocol Shape must be preserved."
 > **Dev:** "And one order line does not automatically equal one Parcel?"
 > **Domain expert:** "Correct. A Delivery Request item represents a parcel, not a product line."
 
@@ -59,3 +81,6 @@
 - "Voucher" is used by the WordPress plugin and partner portal. Use **Parcel** for API-created delivery units and **Parcel Label** for printable output.
 - "Order" belongs to the **Host Application**, not this toolkit. Use **Delivery Request** for BOX NOW API creation.
 - "SDK" is broad. Use **Partner API Client**, **Widget Helper**, or **Astro Integration** depending on the package.
+- "Raw" can mean an unvalidated browser payload or an official BOX NOW wire field. Use **Protocol Field** for documented wire names and **Raw Escape Hatch** for intentional public exposure.
+- "API shape" can mean the **Public Contract** or the **Protocol Shape**. Use the precise term before making naming decisions.
+- WordPress Plugin vocabulary may describe useful merchant habits, but it must not import WooCommerce ownership terms into this toolkit's **Public Contract**.
