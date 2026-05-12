@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest';
 import {
   BoxNowCountryCodeSchema,
   BoxNowEnvironmentSchema,
+  COMPARTMENT_SIZE_CODE_BY_SIZE,
+  COMPARTMENT_SIZE_DIMENSIONS_CM,
   CompartmentSizeSchema,
 } from './primitives.js';
 import { validateWithSchema } from './validation.js';
@@ -34,6 +36,19 @@ describe('primitive schemas', () => {
     });
     await expect(await validateWithSchema(CompartmentSizeSchema, 'large')).toEqual({
       value: 'large',
+    });
+  });
+
+  it('exposes known compartment codes and dimensions', () => {
+    expect(COMPARTMENT_SIZE_CODE_BY_SIZE).toEqual({
+      small: '1',
+      medium: '2',
+      large: '3',
+    });
+    expect(COMPARTMENT_SIZE_DIMENSIONS_CM).toEqual({
+      small: { length: 60, width: 45, height: 8 },
+      medium: { length: 60, width: 45, height: 17 },
+      large: { length: 60, width: 45, height: 36 },
     });
   });
 

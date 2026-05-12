@@ -22,6 +22,7 @@ export type {
   BoxNowPostalCode,
   CompartmentSize,
   CompartmentSizeCode,
+  CompartmentSizeDimensionsCm,
 } from './primitives.js';
 export {
   BoxNowAddressLineSchema,
@@ -30,6 +31,8 @@ export {
   BoxNowEnvironmentSchema,
   BoxNowIdSchema,
   BoxNowPostalCodeSchema,
+  COMPARTMENT_SIZE_CODE_BY_SIZE,
+  COMPARTMENT_SIZE_DIMENSIONS_CM,
   CompartmentSizeCodeSchema,
   CompartmentSizeSchema,
 } from './primitives.js';
