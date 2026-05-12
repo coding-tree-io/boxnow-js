@@ -1,0 +1,33 @@
+{
+  "project": "boxnow-js",
+  "version": 1,
+  "github": {
+    "organization": "coding-tree-io",
+    "repository": "boxnow-js",
+    "visibility": "public"
+  },
+  "planning": {
+    "mode": "flat",
+    "ubiquitous_language_path": ".planning/UBIQUITOUS_LANGUAGE.md",
+    "phase_context_pattern": ".planning/phases/{phase}/{phase}-CONTEXT.md",
+    "adr_path": ".planning/adrs",
+    "workflow_use_worktrees": false
+  },
+  "verification": {
+    "default_commands": [
+      "pnpm test",
+      "pnpm check",
+      "pnpm build"
+    ],
+    "browser_checks_required_for": [
+      "widget package",
+      "astro package",
+      "docs playground"
+    ]
+  },
+  "packages": [
+    "@coding-tree-io/boxnow",
+    "@coding-tree-io/boxnow-widget",
+    "@coding-tree-io/astro-boxnow"
+  ]
+}
