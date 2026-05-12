@@ -20,7 +20,7 @@ Goal: make the repository safe to build in without implementing BOX NOW behavior
 
 Goal: lock terminology, source material, and public API boundaries before code.
 
-- [ ] 01-01 Capture official BOX NOW API research.
+- [x] 01-01 Capture official BOX NOW API research.
 - [ ] 01-02 Capture BOX NOW widget research.
 - [ ] 01-03 Capture WordPress plugin and Symfony bundle behavior and failure-mode research.
 - [ ] 01-04 Decide package topology ADR.
