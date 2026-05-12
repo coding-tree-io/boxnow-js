@@ -144,6 +144,7 @@ vite.config.ts.timestamp-*
 
 # Local IDE/project metadata
 .idea/
+.serena/
 
 # Local third-party research snapshots; document findings under .planning/research instead
 box-now-delivery-WP/

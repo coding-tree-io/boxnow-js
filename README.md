@@ -5,6 +5,17 @@ Unofficial TypeScript client, widget helpers, and Astro integration for BOX NOW.
 This repository is in planning/bootstrap. The source of truth for scope,
 terminology, and implementation slices lives under [`.planning/`](.planning/).
 
+## Development
+
+This repository uses Node 24 and pnpm 10.33.2.
+
+```powershell
+pnpm install
+pnpm check
+pnpm test
+pnpm build
+```
+
 Planned packages:
 
 - `@coding-tree-io/boxnow` - server-side Partner API client and shared types

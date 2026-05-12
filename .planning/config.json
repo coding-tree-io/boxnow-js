@@ -6,28 +6,24 @@
     "repository": "boxnow-js",
     "visibility": "public"
   },
+  "runtime": "codex",
   "planning": {
     "mode": "flat",
     "ubiquitous_language_path": ".planning/UBIQUITOUS_LANGUAGE.md",
     "phase_context_pattern": ".planning/phases/{phase}/{phase}-CONTEXT.md",
-    "adr_path": ".planning/adrs",
-    "workflow_use_worktrees": false
+    "adr_path": ".planning/adrs"
   },
   "verification": {
-    "default_commands": [
-      "pnpm test",
-      "pnpm check",
-      "pnpm build"
-    ],
-    "browser_checks_required_for": [
-      "widget package",
-      "astro package",
-      "docs playground"
-    ]
+    "default_commands": ["pnpm test", "pnpm check", "pnpm build"],
+    "browser_checks_required_for": ["widget package", "astro package", "docs playground"]
   },
   "packages": [
     "@coding-tree-io/boxnow",
     "@coding-tree-io/boxnow-widget",
     "@coding-tree-io/astro-boxnow"
-  ]
+  ],
+  "workflow": {
+    "use_worktrees": false,
+    "_auto_chain_active": false
+  }
 }
