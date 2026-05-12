@@ -4,7 +4,8 @@
 
 - Plugin page: https://wordpress.org/plugins/box-now-delivery/
 - Downloaded version studied: `3.2.1`
-- Local study path at research time: `C:\WINDOWS\TEMP\box-now-delivery-plugin-study\box-now-delivery`
+- Local study path: `.planning/research/_local-sources/box-now-delivery-WP`
+- Checked on 2026-05-12
 
 The plugin is a behavior reference, not an architecture template.
 
@@ -33,6 +34,10 @@ as independent primitives:
 - Generate delivery requests through `/api/v1/delivery-requests`.
 - Fetch labels through `/api/v1/parcels/{parcelId}/label.pdf`.
 - Cancel through `/api/v1/parcels/{parcelId}:cancel`.
+- Validate checkout attempts when BOX NOW shipping is selected but no locker has
+  been chosen.
+- Give operators visible feedback after voucher creation, label printing, and
+  cancellation.
 
 ## Plugin Behavior To Avoid
 
@@ -43,6 +48,27 @@ as independent primitives:
 - Do not persist raw widget/API payloads as the main public contract.
 - Do not silently auto-pick compartment sizes unless the host application opts in.
 - Do not make browser code depend on API credentials.
+- Do not expose WooCommerce order status or admin action vocabulary in public
+  TypeScript names.
+- Do not model "voucher" as the primary public term. Use Parcel and Parcel Label
+  unless writing migration/context notes.
+
+## Targeted Local Source Findings
+
+- Settings include API URL, warehouse/origin ids, OAuth client id/secret,
+  partner id, voucher contact data, returns behavior, widget display mode, GPS
+  behavior, and custom button/message labels.
+- Browser scripts store selected locker data in `localStorage` and also bridge
+  selected locker id into WooCommerce session/order metadata.
+- Browser scripts use country-specific widget hosts for Greece, Cyprus,
+  Bulgaria, and Croatia.
+- Admin voucher actions create one or more parcels from an order, fetch PDF
+  labels, and cancel selected parcel vouchers.
+- Manual compartment-size buttons exist for small, medium, and large vouchers.
+  Automatic voucher issuance is explicitly cautioned against in the admin UI.
+- Checkout-block and thank-you-page flows show real-world pain around missing
+  locker selection, but this toolkit should expose events and validation helpers
+  rather than own checkout completion.
 
 ## Public Feedback Signals
 
@@ -68,3 +94,5 @@ integration should remain separate and strongly typed.
 - The Widget Helper should parse and validate widget selections without forcing
   storage.
 - The docs should include a "host app responsibilities" section.
+- Public docs may mention the WordPress Plugin as ecosystem context, but should
+  not promise WooCommerce compatibility or a migration path in Phase 01.

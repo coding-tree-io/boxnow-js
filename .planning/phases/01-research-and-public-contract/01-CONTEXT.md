@@ -93,6 +93,15 @@ component, package exports, live credential validation, or npm publishing.
 
 - `.planning/phases/01-research-and-public-contract/01-PLAN.md` - current Phase 01 plan and initial public API sketch.
 - `.planning/phases/01-research-and-public-contract/01-CONTEXT.md` - this context file.
+- `.planning/public-api-sketch.md` - named public contract skeleton and compatibility candidates.
+- `.planning/research/boxnow-official-api.md` - official Partner API research, source hierarchy, and protocol gaps.
+- `.planning/research/boxnow-widget.md` - widget and Astro integration research.
+- `.planning/research/boxnow-wordpress-plugin-study.md` - targeted WordPress Plugin behavior study.
+- `.planning/research/boxnow-symfony-bundle-study.md` - Answear Symfony bundle ecosystem study.
+- `.planning/adrs/ADR-001-package-topology.md` - package split decision.
+- `.planning/adrs/ADR-002-secret-boundaries.md` - Server Credential and Browser-Safe Config boundary.
+- `.planning/adrs/ADR-003-widget-contract.md` - LockerSnapshot and widget event contract boundary.
+- `.planning/adrs/ADR-004-astro-integration-scope.md` - Astro Integration scope boundary.
 
 ### External Ecosystem References
 
@@ -125,6 +134,8 @@ component, package exports, live credential validation, or npm publishing.
 - Phase 01 ADRs should capture package topology, secret boundary, widget contract, and Astro scope decisions.
 - The public API sketch must be reviewed against `.planning/UBIQUITOUS_LANGUAGE.md`.
 - Local third-party source copies belong under `.planning/research/_local-sources/` and are excluded from git.
+- Package README stubs can exist before implementation, but package exports and
+  behavior claims must wait for implementation phases.
 
 </code_context>
 

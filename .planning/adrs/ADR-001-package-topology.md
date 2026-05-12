@@ -11,6 +11,11 @@ project integration. Combining these into one package would risk leaking server
 credentials into browser builds and would make simple consumers depend on
 framework-specific code.
 
+Phase 01 research also found ecosystem implementations with framework-specific
+ownership boundaries: the WordPress Plugin owns WooCommerce checkout/admin flows,
+and the Answear Symfony bundle exposes Symfony services. Those are useful
+references but should not collapse this toolkit into one framework package.
+
 ## Decision
 
 Use a pnpm monorepo with three primary public packages:
@@ -21,9 +26,13 @@ Use a pnpm monorepo with three primary public packages:
 
 Keep docs and examples outside the public packages.
 
+The initial public contract skeleton is recorded in `.planning/public-api-sketch.md`.
+
 ## Consequences
 
 - Consumers can install only the package they need.
 - The browser package cannot accidentally import server credential code.
 - The Astro package can stay thin and compose the widget package.
 - Cross-package type sharing must be intentional and covered by export tests.
+- Framework-specific integration packages remain optional wrappers over the core
+  Partner API Client and Widget Helper.

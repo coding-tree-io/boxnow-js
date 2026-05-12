@@ -1,12 +1,22 @@
-# Research: Official BOX NOW API And Widget
+# Research: Official BOX NOW Partner API
 
 ## Sources
 
 - Partner API entry point: https://boxnow.gr/en/hidden/Partner-API-EN
 - API manual PDF: https://boxnow.gr/media/hidden/BoxNow%20API%20Manual%20%28v.7.2%29.pdf
 - OpenAPI YAML: https://boxnow.gr/media/hidden/partner-api-1.68.yaml
-- Widget developer page: https://widget-v5.boxnow.gr/devs
-- Astro Integration API: https://docs.astro.build/en/reference/integrations-reference/
+
+## Source Status
+
+- Checked on 2026-05-12.
+- Partner API entry point links to the manual, webhook tracking guide, swagger,
+  and API documentation.
+- OpenAPI version is `1.68`, with a 2025-03-03 revision note for delivery
+  request parcel weight description.
+- Manual version is `v7.2`.
+- OpenAPI is the protocol source of truth for request and response shape.
+- Manual text explains semantics and operational intent when the OpenAPI shape
+  is terse.
 
 ## Setup Requirements
 
@@ -21,6 +31,10 @@ Those values are server credentials. They must not appear in browser code,
 Astro public env vars, docs examples, CI logs, committed fixtures, or generated
 client bundles.
 
+Sandbox and production base URLs are partner-provided. Public examples should
+use placeholder environment variable names and must not imply that a public
+base URL is safe to hard-code.
+
 ## Partner API Shape
 
 Known API surface from official manual/OpenAPI:
@@ -30,6 +44,7 @@ Known API surface from official manual/OpenAPI:
 - `GET /api/v1/destinations`: APM destination lockers.
 - `POST /api/v1/delivery-requests`: create delivery requests and parcels.
 - `PUT /api/v1/delivery-requests/{id}`: modify limited delivery request fields.
+- `GET /api/v1/parcels`: list or search accessible parcels where allowed.
 - `GET /api/v1/parcels/{id}/label.pdf`: fetch PDF label.
 - `GET /api/v1/parcels/{id}/label.zpl`: fetch ZPL label when supported.
 - `POST /api/v1/labels:search`: fetch multiple labels when supported.
@@ -38,6 +53,20 @@ Known API surface from official manual/OpenAPI:
 
 The OpenAPI YAML is version `1.68` and should be the preferred protocol fixture
 when manual and website snippets disagree.
+
+## Authentication Contract
+
+The public client should expose a single server-side factory that accepts Server
+Credentials and a fetch-compatible transport seam. Internally, the first
+implementation must:
+
+- call `/api/v1/auth-sessions` with `client_credentials`
+- cache the returned bearer token until expiry
+- attach the bearer token to Partner API requests
+- map 401/403 responses into typed auth/permission errors
+
+Token cache behavior is a server-side concern. Browser packages and Astro
+client assets must never import or serialize the OAuth client secret.
 
 ## Delivery Request Semantics
 
@@ -64,6 +93,10 @@ Important fields to support:
 - `items[].weight`
 - `items[].compartmentSize`
 
+Public request builders should use Domain Terms where they clarify intent, such
+as `weightKg` and `CompartmentSize`, while preserving Protocol Fields through a
+Raw Escape Hatch when exact OpenAPI fidelity is required.
+
 ## Compartment Sizes
 
 BOX NOW compartment size codes:
@@ -83,31 +116,35 @@ The WordPress plugin currently uses these dimension constants:
 Do not make automatic compartment calculation the default behavior. Consumers
 should choose the size or explicitly opt into helper logic.
 
-## Widget Shape
+## Error And Gap Notes
 
-The official widget page documents:
+- The OpenAPI/manual error-code list is broad. The initial client should map at
+  least auth, validation, not-found/permission, rate/network, and BOX NOW
+  protocol-code failures.
+- Parcel cancellation is not a generic order-cancel operation. It is constrained
+  by parcel state and should be named around Parcel cancellation.
+- `labels:search` and batch label behavior need fixture-backed confirmation
+  before the public API promises a rich query helper.
+- Live behavior remains unverified until BOX NOW sandbox/partner credentials are
+  available.
 
-- CDN script: `https://widget-cdn.boxnow.gr/map-widget/client/v5.js`
-- Global config: `_bn_map_widget_config`
-- Required `parentElement`
-- Required `afterSelect` for iframe and popup modes
-- Optional `partnerId`
-- Optional `type`: `iframe`, `popup`, or `navigate`
-- Optional `gps`
-- Optional `autoclose`
-- Optional `autoselect`
-- Optional `buttonSelector`
-- Optional `zip`
+## Research Decisions
 
-The widget selection includes raw fields such as:
+- Use official OpenAPI/manual as the protocol source of truth.
+- Keep server client and browser widget packages separate.
+- Make live BOX NOW tests opt-in because credentials are external.
+- Preserve protocol fidelity behind explicit escape hatches, not as the default
+  naming style.
 
-- `boxnowLockerId`
-- `boxnowLockerAddressLine1`
-- `boxnowLockerPostalCode`
-- `boxnowLockerName`
+## Research Gaps
 
-The widget helper should normalize those fields and avoid exposing raw payloads
-as the primary public contract.
+- Confirm whether `/api/v1/labels:search` should be a first-class helper or a
+  lower-level protocol method in the first alpha.
+- Confirm the current OpenAPI response shape for `parcels` and delivery request
+  label URLs before implementing typed response models.
+- Confirm live sandbox behavior for token expiry and retry timing.
+- Confirm if `X-PartnerID` must be surfaced in public config for partners with
+  multiple entrusted partners.
 
 ## Astro Integration Notes
 
