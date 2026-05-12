@@ -11,8 +11,28 @@ field.
 - Public Contracts use Domain Terms from `.planning/UBIQUITOUS_LANGUAGE.md`.
 - OpenAPI/manual names define Protocol Shapes and Protocol Fields.
 - Protocol Fields appear in Raw Escape Hatches only when fidelity requires it.
+- Wire-facing request/response types are protocol-first when consumers build or
+  read official BOX NOW payloads directly.
+- Host-facing widget/domain types remain ergonomic and glossary-led.
 - Package names, factories, method namespaces, event names, and glossary-backed
   domain type names require explicit review before changing.
+
+## Internal Package Boundary
+
+Phase 02 introduces an internal workspace package named
+`@coding-tree-io/boxnow-core` for shared models, Standard Schema-shaped
+validation contracts, Valibot-backed schemas, and pure builders. It is not the
+supported public import path.
+
+The public import story remains:
+
+- `@coding-tree-io/boxnow` for server-side Partner API Client contracts.
+- `@coding-tree-io/boxnow-widget` for browser-safe widget contracts.
+- `@coding-tree-io/astro-boxnow` for Astro integration contracts.
+
+Public packages may curate re-exports from the internal package when those names
+belong to their user-facing contracts. Internal validation plumbing remains
+private unless a later phase promotes it deliberately.
 
 ## `@coding-tree-io/boxnow`
 
