@@ -1,0 +1,12 @@
+{
+  "name": "@coding-tree-io/boxnow-widget",
+  "version": "0.0.0",
+  "description": "Browser-safe BOX NOW widget contracts and helpers.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@coding-tree-io/boxnow-core": "workspace:*"
+  }
+}

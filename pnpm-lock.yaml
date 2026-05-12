@@ -24,6 +24,12 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(vite@8.0.12)
 
+  packages/boxnow:
+    dependencies:
+      '@coding-tree-io/boxnow-core':
+        specifier: workspace:*
+        version: link:../boxnow-core
+
   packages/boxnow-core:
     dependencies:
       '@standard-schema/spec':
@@ -32,6 +38,12 @@ importers:
       valibot:
         specifier: ^1.4.0
         version: 1.4.0(typescript@6.0.3)
+
+  packages/boxnow-widget:
+    dependencies:
+      '@coding-tree-io/boxnow-core':
+        specifier: workspace:*
+        version: link:../boxnow-core
 
 packages:
 
