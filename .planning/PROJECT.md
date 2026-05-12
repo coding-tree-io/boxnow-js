@@ -42,6 +42,7 @@ The repository is a small monorepo:
 - Official widget developer page: https://widget-v5.boxnow.gr/devs
 - Astro Integration API: https://docs.astro.build/en/reference/integrations-reference/
 - WordPress plugin reference: https://wordpress.org/plugins/box-now-delivery/
+- Symfony bundle ecosystem reference: https://github.com/answear/boxnow-bundle
 
 ## Current Status
 

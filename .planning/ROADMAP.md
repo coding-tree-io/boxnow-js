@@ -22,7 +22,7 @@ Goal: lock terminology, source material, and public API boundaries before code.
 
 - [ ] 01-01 Capture official BOX NOW API research.
 - [ ] 01-02 Capture BOX NOW widget research.
-- [ ] 01-03 Capture WordPress plugin behavior and failure-mode research.
+- [ ] 01-03 Capture WordPress plugin and Symfony bundle behavior and failure-mode research.
 - [ ] 01-04 Decide package topology ADR.
 - [ ] 01-05 Decide secret-boundary ADR.
 - [ ] 01-06 Decide widget-contract ADR.

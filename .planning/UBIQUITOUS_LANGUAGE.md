@@ -61,8 +61,8 @@
 1. Official BOX NOW documentation establishes canonical BOX NOW terms when the term is clear and safe for public use.
 2. Official OpenAPI/manual names define **Protocol Shapes** and **Protocol Fields**, but do not automatically become **Public Contract** names.
 3. Official widget documentation defines browser widget behavior terms for the **Widget Helper** and **Astro Integration**.
-4. Existing ecosystem terms, including the WordPress Plugin, are secondary evidence for merchant vocabulary, aliases to avoid, and future migration context.
-5. Toolkit authority boundaries can override familiar ecosystem terms when a term would imply checkout, payment, order persistence, stock, fulfillment, or credential ownership.
+4. Existing ecosystem terms, including the WordPress Plugin and Symfony bundle references, are secondary evidence for merchant/developer vocabulary, aliases to avoid, and future context.
+5. Toolkit authority boundaries can override familiar ecosystem terms when a term would imply checkout, payment, order persistence, stock, fulfillment, framework ownership, or credential ownership.
 
 ## Example Dialogue
 
@@ -83,4 +83,4 @@
 - "SDK" is broad. Use **Partner API Client**, **Widget Helper**, or **Astro Integration** depending on the package.
 - "Raw" can mean an unvalidated browser payload or an official BOX NOW wire field. Use **Protocol Field** for documented wire names and **Raw Escape Hatch** for intentional public exposure.
 - "API shape" can mean the **Public Contract** or the **Protocol Shape**. Use the precise term before making naming decisions.
-- WordPress Plugin vocabulary may describe useful merchant habits, but it must not import WooCommerce ownership terms into this toolkit's **Public Contract**.
+- WordPress Plugin and Symfony bundle vocabulary may describe useful merchant/developer habits, but it must not import framework ownership terms into this toolkit's **Public Contract**.

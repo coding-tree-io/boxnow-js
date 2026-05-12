@@ -212,3 +212,9 @@
 
 - Live BOX NOW behavior validation waits for sandbox/partner credentials.
 - WordPress migration guidance is not part of Phase 01.
+
+## Post-Discussion Addendum
+
+- User added `https://github.com/answear/boxnow-bundle` as another potentially helpful ecosystem implementation reference for Phase 01.
+- It should be researched as secondary evidence alongside the WordPress Plugin, especially for server-side configuration, OAuth/auth handling, pickup-point/location API behavior, country/region handling, and test patterns.
+- It is not an authority over official BOX NOW docs and is not a compatibility target.

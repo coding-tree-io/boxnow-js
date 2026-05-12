@@ -6,9 +6,10 @@
 <domain>
 ## Phase Boundary
 
-Turn the official BOX NOW material, WordPress plugin study, Astro integration
-docs, and existing glossary into explicit research notes, ADRs, and a first
-public contract skeleton before runtime implementation starts.
+Turn the official BOX NOW material, WordPress plugin and Symfony bundle
+ecosystem studies, Astro integration docs, and existing glossary into explicit
+research notes, ADRs, and a first public contract skeleton before runtime
+implementation starts.
 
 This phase locks research/source boundaries and reviewable public API direction.
 It does not implement the Partner API Client, browser widget loader, Astro
@@ -22,7 +23,7 @@ component, package exports, live credential validation, or npm publishing.
 ### Existing Decisions
 
 - **D-01-01:** Official BOX NOW OpenAPI/manual are protocol sources of truth.
-- **D-01-02:** The WordPress Plugin is a behavior reference only.
+- **D-01-02:** The WordPress Plugin and Answear Symfony BoxNow Bundle are ecosystem behavior references only.
 - **D-01-03:** Public API names must follow `.planning/UBIQUITOUS_LANGUAGE.md`.
 - **D-01-04:** Server Credentials and Browser-Safe Config are distinct concepts.
 - **D-01-05:** The Astro Integration composes the Widget Helper and does not own checkout.
@@ -32,14 +33,14 @@ component, package exports, live credential validation, or npm publishing.
 - **D-01-06:** Phase 01 should commit detailed, paraphrased extraction rather than raw source snapshots.
 - **D-01-07:** Research should be organized as source-first files under `.planning/research/`, with ADRs citing those files.
 - **D-01-08:** The local WordPress Plugin source lives at `.planning/research/_local-sources/box-now-delivery-WP` and is excluded through `.git/info/exclude`; it is for investigation only.
-- **D-01-09:** Inspect the WordPress Plugin only where relevant to settings, API calls, widget behavior, status/failure handling, and checkout integration.
+- **D-01-09:** Inspect ecosystem references only where relevant to settings/configuration, API calls, widget behavior, status/failure handling, and host-framework integration.
 - **D-01-10:** Committed artifacts must stay paraphrased and source-neutral. Richer excerpts may exist only in local notes and must not be committed.
 
 ### Official-Source Conflict Policy
 
 - **D-01-11:** For Partner API protocol shape, OpenAPI wins for request/response shape, the manual explains semantics, and widget docs own browser widget behavior.
 - **D-01-12:** Every unresolved contradiction or missing source detail becomes a named research gap with source refs, current assumption, and validation path.
-- **D-01-13:** WordPress Plugin behavior cannot override official BOX NOW OpenAPI, manual, or widget documentation.
+- **D-01-13:** Ecosystem implementation behavior cannot override official BOX NOW OpenAPI, manual, or widget documentation.
 - **D-01-14:** Without BOX NOW live credentials, design against documented contracts and mocked fixtures, then mark live behavior as future validation work.
 
 ### Public API Sketch Depth
@@ -51,22 +52,23 @@ component, package exports, live credential validation, or npm publishing.
 
 ### WordPress Reference Boundary
 
-- **D-01-19:** Valuable WordPress Plugin input is limited to integration behavior: settings model, checkout placement, widget configuration, API usage, status/failure handling, and merchant-facing edge cases.
-- **D-01-20:** Reject checkout ownership, order persistence, payment/stock assumptions, admin workflows, hidden storage authority, and WooCommerce-specific responsibility as toolkit responsibilities.
-- **D-01-21:** Do not create a WordPress migration guide in this phase. Treat the plugin as a research source, not a compatibility target.
-- **D-01-22:** WordPress Plugin and ecosystem vocabulary may inform the glossary as secondary evidence, but public names come from the ubiquitous language.
+- **D-01-19:** Valuable ecosystem input is limited to integration behavior: settings/configuration model, checkout placement where applicable, widget configuration, API usage, status/failure handling, and merchant/developer-facing edge cases.
+- **D-01-20:** Reject checkout ownership, order persistence, payment/stock assumptions, admin workflows, hidden storage authority, and WooCommerce/Symfony-specific responsibility as toolkit responsibilities.
+- **D-01-21:** Do not create a WordPress or Symfony migration guide in this phase. Treat ecosystem implementations as research sources, not compatibility targets.
+- **D-01-22:** WordPress Plugin, Symfony bundle, and ecosystem vocabulary may inform the glossary as secondary evidence, but public names come from the ubiquitous language.
+- **D-01-23:** Research `https://github.com/answear/boxnow-bundle` as a Symfony/PHP ecosystem reference for config shape, OAuth/auth handling, pickup-point/location API handling, country/region handling, and test/fixture patterns.
 
 ### Naming Source Precedence
 
-- **D-01-23:** Official BOX NOW documentation establishes canonical terms when clear and safe for public use.
-- **D-01-24:** OpenAPI/manual names define Protocol Shapes and Protocol Fields, but do not automatically become Public Contract names.
-- **D-01-25:** Widget documentation defines browser widget behavior terms for the Widget Helper and Astro Integration.
-- **D-01-26:** Existing ecosystem terms, including the WordPress Plugin, are secondary evidence for merchant vocabulary, aliases to avoid, and possible future context.
-- **D-01-27:** Toolkit authority boundaries override familiar ecosystem terms when those terms imply checkout, payment, order persistence, stock, fulfillment, or credential ownership.
+- **D-01-24:** Official BOX NOW documentation establishes canonical terms when clear and safe for public use.
+- **D-01-25:** OpenAPI/manual names define Protocol Shapes and Protocol Fields, but do not automatically become Public Contract names.
+- **D-01-26:** Widget documentation defines browser widget behavior terms for the Widget Helper and Astro Integration.
+- **D-01-27:** Existing ecosystem terms, including the WordPress Plugin and Symfony bundle references, are secondary evidence for merchant/developer vocabulary, aliases to avoid, and possible future context.
+- **D-01-28:** Toolkit authority boundaries override familiar ecosystem terms when those terms imply checkout, payment, order persistence, stock, fulfillment, framework ownership, or credential ownership.
 
 ### the agent's Discretion
 
-- **D-01-28:** The planner may choose the example style for the public API sketch based on research detail, as long as the sketch does not pretend exhaustive endpoint fields are final.
+- **D-01-29:** The planner may choose the example style for the public API sketch based on research detail, as long as the sketch does not pretend exhaustive endpoint fields are final.
 
 </decisions>
 
@@ -91,6 +93,10 @@ component, package exports, live credential validation, or npm publishing.
 
 - `.planning/phases/01-research-and-public-contract/01-PLAN.md` - current Phase 01 plan and initial public API sketch.
 - `.planning/phases/01-research-and-public-contract/01-CONTEXT.md` - this context file.
+
+### External Ecosystem References
+
+- `https://github.com/answear/boxnow-bundle` - Symfony/PHP ecosystem implementation reference for targeted Phase 01 inspection. Secondary evidence only; official BOX NOW docs remain authoritative.
 
 ### Local-Only Research Source
 
@@ -127,9 +133,10 @@ component, package exports, live credential validation, or npm publishing.
 
 - The WordPress Plugin source has been moved from the repository root to `.planning/research/_local-sources/box-now-delivery-WP`.
 - The WordPress Plugin should be inspected for targeted behavior only and summarized without mirroring its structure.
+- The Answear Symfony BoxNow Bundle should be researched from GitHub as another ecosystem implementation reference, especially for server-side config/auth, pickup-point/location API behavior, country/region handling, and test patterns.
 - The glossary now distinguishes Public Contract, Domain Term, Protocol Shape, Protocol Field, and Raw Escape Hatch.
 - Phase 01 should prefer detailed source-first research summaries over raw snapshots or one mixed research dossier.
-- The WordPress Plugin should be mentioned as a research source, not as a compatibility or migration target.
+- Ecosystem implementations should be mentioned as research sources, not as compatibility or migration targets.
 
 </specifics>
 
@@ -137,7 +144,7 @@ component, package exports, live credential validation, or npm publishing.
 ## Deferred Ideas
 
 - Live BOX NOW behavior validation is deferred until sandbox/partner credentials are available.
-- WordPress migration guidance is not part of Phase 01 and should not be implied by the research.
+- WordPress/Symfony migration guidance is not part of Phase 01 and should not be implied by the research.
 
 </deferred>
 
