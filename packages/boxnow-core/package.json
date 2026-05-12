@@ -1,0 +1,14 @@
+{
+  "name": "@coding-tree-io/boxnow-core",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal shared contracts and validation for BOX NOW Toolkit packages.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@standard-schema/spec": "^1.1.0",
+    "valibot": "^1.4.0"
+  }
+}
