@@ -2,21 +2,21 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_execute
-last_updated: "2026-05-12T14:06:13.0347767Z"
+status: ready_for_next_phase
+last_updated: "2026-05-12T14:14:40.7598916Z"
 progress:
   total_phases: 8
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 7
-  completed_plans: 6
-  percent: 86
+  completed_plans: 7
+  percent: 100
 ---
 
 # State
 
 ## Current Focus
 
-Phase 02: Core Types And Validation.
+Phase 03: Partner API Client.
 
 ## Completed
 
@@ -33,20 +33,17 @@ Phase 02: Core Types And Validation.
 
 ## In Progress
 
-- Phase 02 core types and validation planned in five sequential waves.
+- Phase 03 Partner API Client is ready for discussion and planning.
 
 ## Next Task
 
-`$gsd-execute-phase 02`.
+`$gsd-discuss-phase 03`.
 
 Recommended next focus:
 
-1. Execute the Phase 02 external audit and glossary/API sketch alignment gate.
-2. Add the internal validation/core package with Valibot and Standard Schema
-   shaped contracts.
-
-3. Implement only the primitives, locker snapshot, and protocol request builders
-   needed by the BlackBox Records MVP.
+1. Discuss Phase 03 against the implemented Phase 02 contracts.
+2. Keep the first Partner API Client slice limited to the BlackBox Records MVP.
+3. Preserve the server credential and browser boundary established in Phase 02.
 
 ## Blockers
 
@@ -75,6 +72,11 @@ Recommended next focus:
 - Phase 02 Wave 4 protocol schemas and validation helpers completed.
 - Phase 02 Wave 4 targeted Vitest, `pnpm check`, `pnpm test`, and `pnpm build`
   succeeded.
+- Phase 02 Wave 5 public package contract exports completed.
+- Phase 02 Wave 5 `pnpm install`, targeted package-surface Vitest,
+  `pnpm check`, `pnpm test`, `pnpm build`, and README internal-import guard
+  succeeded.
+- Phase 02 core types and validation completed.
 
 ## Operating Notes
 

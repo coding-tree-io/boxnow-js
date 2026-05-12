@@ -45,7 +45,7 @@ Goal: create shared types and pure validation without HTTP.
 - [x] 02-07 Add `Parcel`, `ParcelLabelFormat`, and label option types.
 - [x] 02-08 Add protocol response types for auth, locations, delivery requests, and parcels.
 - [x] 02-09 Add validation helpers for public request builders.
-- [ ] 02-10 Add tests for all pure validation helpers.
+- [x] 02-10 Add tests for all pure validation helpers.
 
 ## Phase 03: Partner API Client
 
