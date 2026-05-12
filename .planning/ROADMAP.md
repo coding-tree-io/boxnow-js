@@ -8,13 +8,13 @@ Each task should be one PR or one focused commit.
 Goal: make the repository safe to build in without implementing BOX NOW behavior.
 
 - [x] 00-01 Create public GitHub repository under `coding-tree-io`.
-- [ ] 00-02 Add package manager and TypeScript workspace skeleton.
-- [ ] 00-03 Add formatting, linting, typecheck, unit-test, and build scripts.
-- [ ] 00-04 Add Changesets and release workflow skeleton.
-- [ ] 00-05 Add contributor, security, and package support policy docs.
-- [ ] 00-06 Add first CI workflow for install, check, test, and build.
-- [ ] 00-07 Add root `AGENTS.md` for repo-specific source-of-truth rules.
-- [ ] 00-08 Verify the empty workspace on Windows and CI.
+- [x] 00-02 Add package manager and TypeScript workspace skeleton.
+- [x] 00-03 Add formatting, linting, typecheck, unit-test, and build scripts.
+- [x] 00-04 Add Changesets and release workflow skeleton.
+- [x] 00-05 Add contributor, security, and package support policy docs.
+- [x] 00-06 Add first CI workflow for install, check, test, and build.
+- [x] 00-07 Add root `AGENTS.md` for repo-specific source-of-truth rules.
+- [x] 00-08 Verify the empty workspace on Windows and CI.
 
 ## Phase 01: Research And Public Contract
 
