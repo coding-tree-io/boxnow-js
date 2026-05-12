@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_plan
-last_updated: "2026-05-12T12:07:43.512Z"
+status: ready_to_execute
+last_updated: "2026-05-12T12:54:51.212Z"
 progress:
   total_phases: 8
   completed_phases: 2
-  total_plans: 2
+  total_plans: 7
   completed_plans: 2
-  percent: 100
+  percent: 29
 ---
 
 # State
@@ -33,27 +33,26 @@ Phase 02: Core Types And Validation.
 
 ## In Progress
 
-- Phase 02 core types and validation planning.
+- Phase 02 core types and validation planned in five sequential waves.
 
 ## Next Task
 
-`$gsd-discuss-phase 02` or `$gsd-plan-phase 02`.
+`$gsd-execute-phase 02`.
 
 Recommended next focus:
 
-1. Complete the Phase 02 external library audit gate for the local WordPress
-   Plugin and `answear/boxnow-bundle`.
-
-2. Confirm Phase 02 type and validation boundaries.
-3. Plan shared domain types around `.planning/public-api-sketch.md`.
-4. Keep protocol naming aligned with `.planning/UBIQUITOUS_LANGUAGE.md`.
+1. Execute the Phase 02 external audit and glossary/API sketch alignment gate.
+2. Add the internal validation/core package with Valibot and Standard Schema
+   shaped contracts.
+3. Implement only the primitives, locker snapshot, and protocol request builders
+   needed by the BlackBox Records MVP.
 
 ## Blockers
 
 - BOX NOW sandbox/partner credentials are not available in this repository.
 - npm publication under `@coding-tree-io` is not yet proven.
-- Phase 02 public names and validation contracts should not be locked until the
-  external library audit gate is complete.
+- BOX NOW delivery-request behavior remains unverified against live sandbox
+  credentials.
 
 ## Validation Evidence
 
@@ -65,6 +64,8 @@ Recommended next focus:
 - `pnpm test` succeeded with no test files yet.
 - `pnpm build` succeeded.
 - Phase 01 `pnpm check`, `pnpm test`, and `pnpm build` succeeded.
+- Phase 02 plan structure checks passed for all five plan files.
+- Phase 02 planning `pnpm check`, `pnpm test`, and `pnpm build` succeeded.
 
 ## Operating Notes
 

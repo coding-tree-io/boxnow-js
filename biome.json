@@ -5,7 +5,8 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false
+    "ignoreUnknown": false,
+    "includes": ["**", "!.planning/research/_local-sources"]
   },
   "formatter": {
     "enabled": true,
