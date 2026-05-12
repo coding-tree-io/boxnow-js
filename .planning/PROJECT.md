@@ -47,12 +47,15 @@ The repository is a small monorepo:
 ## Current Status
 
 Phase 01 research and public contract work is complete. Phase 02 is ready to
-plan shared types and pure validation. No runtime package implementation has
-started.
+plan shared types and pure validation after the external library audit gate is
+complete. No runtime package implementation has started.
 
 ## Open External Gates
 
 - npm organization access for `@coding-tree-io/*` package publication.
 - BOX NOW sandbox/partner credentials for live contract validation.
+- External library audit gate before Phase 02 contracts: complete a source audit
+  of the local WordPress Plugin and `answear/boxnow-bundle`; keep official BOX
+  NOW OpenAPI and widget docs authoritative over ecosystem behavior.
 - Trademark/wording review if the README or package metadata needs stronger
   BOX NOW brand language.

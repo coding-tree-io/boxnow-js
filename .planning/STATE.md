@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: ready_to_plan
-last_updated: "2026-05-12T10:21:40.364Z"
+last_updated: "2026-05-12T12:07:43.512Z"
 progress:
   total_phases: 8
   completed_phases: 2
   total_plans: 2
   completed_plans: 2
-  percent: 25
+  percent: 100
 ---
 
 # State
@@ -26,9 +26,10 @@ Phase 02: Core Types And Validation.
 - Phase 00 repository foundation completed with Node 24, pnpm 10.33.2, TypeScript,
   Biome, Vitest, tsdown metadata, Changesets versioning metadata, CI, contribution
   docs, and repo-local AGENTS.md guidance.
+
 - Phase 01 research and public contract completed with source-first BOX NOW
-  research, ecosystem studies, ADRs, package README stubs, and an initial public
-  API sketch.
+  research, targeted ecosystem studies, ADRs, package README stubs, and an
+  initial public API sketch.
 
 ## In Progress
 
@@ -40,14 +41,19 @@ Phase 02: Core Types And Validation.
 
 Recommended next focus:
 
-1. Confirm Phase 02 type and validation boundaries.
-2. Plan shared domain types around `.planning/public-api-sketch.md`.
-3. Keep protocol naming aligned with `.planning/UBIQUITOUS_LANGUAGE.md`.
+1. Complete the Phase 02 external library audit gate for the local WordPress
+   Plugin and `answear/boxnow-bundle`.
+
+2. Confirm Phase 02 type and validation boundaries.
+3. Plan shared domain types around `.planning/public-api-sketch.md`.
+4. Keep protocol naming aligned with `.planning/UBIQUITOUS_LANGUAGE.md`.
 
 ## Blockers
 
 - BOX NOW sandbox/partner credentials are not available in this repository.
 - npm publication under `@coding-tree-io` is not yet proven.
+- Phase 02 public names and validation contracts should not be locked until the
+  external library audit gate is complete.
 
 ## Validation Evidence
 

@@ -9,7 +9,7 @@ requires:
 provides:
   - Source-first BOX NOW Partner API research.
   - Source-first BOX NOW widget and Astro integration research.
-  - WordPress Plugin and Symfony bundle ecosystem studies.
+  - Targeted WordPress Plugin and Symfony bundle ecosystem studies.
   - Accepted ADRs for package topology, secret boundaries, widget contract, and Astro Integration scope.
   - Initial public API contract skeleton.
   - Package README stubs with non-goals.
@@ -65,7 +65,7 @@ completed: 2026-05-12
 
 ## Accomplishments
 
-- Split official Partner API, widget/Astro, WordPress Plugin, and Symfony bundle findings into source-first research artifacts.
+- Split official Partner API, widget/Astro, WordPress Plugin, and Symfony bundle findings into source-first research artifacts, with ecosystem findings treated as targeted studies rather than full audits.
 - Tightened four accepted ADRs with Phase 01 evidence and downstream verification implications.
 - Added `.planning/public-api-sketch.md` with package entry points, method namespaces, event names, config families, and explicit non-goals.
 - Added package README stubs for all three planned packages without introducing runtime exports or implementation files.
@@ -99,13 +99,13 @@ The Phase 01 plan was executed as one documentation-only commit because the plan
 ## Decisions Made
 
 - Kept official BOX NOW sources authoritative over ecosystem implementation behavior.
-- Treated the Answear Symfony bundle as secondary evidence for server-side config/auth and pickup-point patterns.
+- Treated the Answear Symfony bundle as secondary evidence for server-side config/auth and pickup-point patterns, pending a fuller source audit before Phase 02 contracts are locked.
 - Preserved the glossary boundary: Domain Terms first, Raw Escape Hatches only where Protocol Shape fidelity requires them.
 - Added README stubs but removed empty `.gitkeep` placeholders because package directories now have real documentation.
 
 ## Deviations from Plan
 
-None - plan executed exactly as written, with the user-requested Symfony bundle research folded into task 01-03.
+None - plan executed exactly as written, with the user-requested Symfony bundle reference folded into task 01-03 as targeted ecosystem research.
 
 **Total deviations:** 0 auto-fixed.
 **Impact on plan:** No scope creep. The extra ecosystem reference strengthens the existing research task.
@@ -128,7 +128,7 @@ None - no external service configuration required.
 
 ## Next Phase Readiness
 
-Phase 02 can create shared types and validation against the public contract skeleton, glossary, ADRs, and source-first research artifacts. Live BOX NOW validation remains deferred until credentials are available.
+Phase 02 can create shared types and validation against the public contract skeleton, glossary, ADRs, and source-first research artifacts after completing the external library audit gate for the WordPress Plugin and Symfony bundle. Live BOX NOW validation remains deferred until credentials are available.
 
 ---
 *Phase: 01-research-and-public-contract*

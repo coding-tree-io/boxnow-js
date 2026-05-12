@@ -30,9 +30,9 @@ Status: passed.
   - `.planning/research/boxnow-official-api.md`
 - BOX NOW widget and Astro integration research exists: passed.
   - `.planning/research/boxnow-widget.md`
-- WordPress Plugin behavior and failure-mode research exists: passed.
+- Targeted WordPress Plugin behavior and failure-mode research exists: passed.
   - `.planning/research/boxnow-wordpress-plugin-study.md`
-- Symfony bundle ecosystem research requested by the user exists: passed.
+- Targeted Symfony bundle ecosystem research requested by the user exists: passed.
   - `.planning/research/boxnow-symfony-bundle-study.md`
 - ADRs exist for package topology, secrets, widget contract, and Astro scope: passed.
   - `.planning/adrs/ADR-001-package-topology.md`
