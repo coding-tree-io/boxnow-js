@@ -7,6 +7,7 @@ commits:
   - d31b815 feat(02-03): add core primitive schemas
   - 3862b83 feat(02-03): add locker normalization contracts
   - 931020b test(02-03): cover primitives and locker normalization
+  - 58353f4 feat(02-03): add compartment dimension constants
 ---
 
 # 02-03 Summary
@@ -16,6 +17,8 @@ commits:
 - Added shared primitive schemas and inferred types for `BoxNowEnvironment`,
   `BoxNowCountryCode`, `CompartmentSize`, `CompartmentSizeCode`, and small
   string primitives used by later validation contracts.
+- Added BOX NOW compartment size code and centimeter dimension constants from
+  the external audit evidence.
 - Added pure locker/location contracts for `Locker`, `Origin`, `Destination`,
   `LockerSnapshot`, and raw widget locker selection input.
 - Added `normalizeLockerSelection(value)` to validate raw widget protocol fields
